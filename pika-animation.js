@@ -1,5 +1,6 @@
 function pika() {
-document.write('<div class="container1">'+
+var pika = document.createElement("body");
+button.innerHTML('<div class="container1">'+
 	'<div class="gbc">'+
 		'<input id="powerSwitch" checked aria-label="Toggle Gameboy power" class="gbc-power-control" type="checkbox">'+
 		'<label for="powerSwitch" class="gbc-power-label">'+
@@ -64,3 +65,5 @@ document.write('<div class="container1">'+
 	'</div>'+
 '</div>');
 }
+var html = document.getElementsByTagName("html")[0];
+					span.appendChild(pika);
