@@ -16,19 +16,18 @@ body, html {height: 99%; background-color: #111C20;
 	color: inherit;
 }
 .container {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   display: block;
   position: absolute;
+  overflow: hidden;
 }
 .container .row {
-  display: block;
   height: 40%;
   margin: 0;
   padding-left: 30px;
 }
 .container .cell {
-  display: block;
 }
 .top .cell {
   vertical-align: top;
@@ -41,8 +40,6 @@ body, html {height: 99%; background-color: #111C20;
 .middle .cell {
   vertical-align: middle;
   text-align: center;
-  padding-top: 90px; 
-  padding-left: 400px;
 }
 #comingsoon {
 	transition: transform .4s;
@@ -51,7 +48,7 @@ body, html {height: 99%; background-color: #111C20;
   vertical-align: bottom;
   color: white;
   font-size: 13px;
-  padding-top: 280px;
+  padding-top: 5%;
 }
 
 /*keyframes*/
@@ -84,6 +81,7 @@ body, html {height: 99%; background-color: #111C20;
   min-height: 100%;
   position: relative;
   background-position: center;
+  position: relative;
   opacity: 95%;
   background-size: cover;
 }
