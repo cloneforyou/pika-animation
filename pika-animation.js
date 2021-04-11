@@ -1,3 +1,4 @@
+function pika() {
 document.write('<div class="container">'+
 	'<div class="gbc">'+
 		'<input id="powerSwitch" checked aria-label="Toggle Gameboy power" class="gbc-power-control" type="checkbox">'+
@@ -62,3 +63,4 @@ document.write('<div class="container">'+
 		'</div>'+
 	'</div>'+
 '</div>');
+}
