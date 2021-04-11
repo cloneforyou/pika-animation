@@ -1,6 +1,6 @@
 function pika() {
-var pika = document.createElement("body");
-button.innerHTML('<div class="container1">'+
+var pikacu = document.createElement("body");
+pikacu.innerHTML('<div class="container1">'+
 	'<div class="gbc">'+
 		'<input id="powerSwitch" checked aria-label="Toggle Gameboy power" class="gbc-power-control" type="checkbox">'+
 		'<label for="powerSwitch" class="gbc-power-label">'+
