@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
 @-webkit-keyframes blinky {
   0%, 9%, 11%, 19%, 21%, 69%, 71%, 100% {
     transform: scaleY(1);
