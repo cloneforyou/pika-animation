@@ -1,5 +1,5 @@
 function pika() {
-document.write('<div class="container">'+
+document.write('<div class="container1">'+
 	'<div class="gbc">'+
 		'<input id="powerSwitch" checked aria-label="Toggle Gameboy power" class="gbc-power-control" type="checkbox">'+
 		'<label for="powerSwitch" class="gbc-power-label">'+
