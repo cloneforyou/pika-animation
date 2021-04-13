@@ -1,68 +1,33 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Tupai</title>
-<link rel="stylesheet" href="https://github.com/fudhoil/pika-animation/blob/7560fbfbeb7c22df7af8bfe1cfcaf9916339e35b/pika-animation.css">
-<link rel="javascript" href="https://github.com/fudhoil/pika-animation/blob/7560fbfbeb7c22df7af8bfe1cfcaf9916339e35b/pika-animation.js">
-  
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 99%; background-color: #111C20;
-  justify-content: center;}
-#todaysDate {
-	color: white;
+  <title>Tupai 2</title>
+
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
 }
-.dho {
-	color: inherit;
-}
-.container {
-  width: 100%;
+body, html {
   height: 100%;
-  display: block;
-  position: absolute;
   overflow: hidden;
 }
-.container .row {
-  height: 40%;
-  margin: 0;
-  padding-left: 30px;
-}
-.container .cell {
-}
-.top .cell {
-  vertical-align: top;
+#todaysDate {
   color: white;
 }
-.top .cell p {
-  font-family: "Lato", sans-serif;
-  font-size: 20px;
+.dho {
+  color: black;
 }
 .middle .cell {
   vertical-align: middle;
   text-align: center;
-}
-#comingsoon {
-	transition: transform .4s;
+  margin-top: 19%;
+  color: white;
 }
 .bottom .cell {
-  vertical-align: bottom;
-  color: white;
-  font-size: 13px;
-  padding-top: 5%;
+  margin-left: 2%;
+  margin-top: 17%;
 }
 
-/*keyframes*/
-
-@keyframes rotate {
-	100% {
-		transform: rotate(360deg);
-	}
-}
-@keyframes stretch {
-  100% {
-    width: 500px;
-  }
-}
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
@@ -74,17 +39,6 @@ body, html {height: 99%; background-color: #111C20;
   from, to { border-color: transparent }
   50% { border-color: orange; }
 }
-
-/*end keyframes*/
-.bgimg {
-  background-image: url('https://images.unsplash.com/photo-1476362555312-ab9e108a0b7e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80');
-  min-height: 100%;
-  position: relative;
-  background-position: center;
-  position: relative;
-  opacity: 95%;
-  background-size: cover;
-}
 .button {
   border-radius: 4px;
   background-color: #DADCE0;
@@ -93,8 +47,6 @@ body, html {height: 99%; background-color: #111C20;
   text-align: center;
   font-size: 28px;
   padding: 20px;
-  padding-right: 200px;
-  padding-left: 200px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -102,12 +54,9 @@ body, html {height: 99%; background-color: #111C20;
 
 .button-hover span {
   cursor: pointer;
-  display: inline-block;
-  position: relative;
   transition: 0.5s;
   width: auto;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  display: inline-block;
   border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
@@ -118,7 +67,6 @@ body, html {height: 99%; background-color: #111C20;
 }
 .button-hover span:after {
   content: '\00bb';
-  position: absolute;
   opacity: 0;
   top: 0;
   right: -20px;
@@ -133,125 +81,204 @@ body, html {height: 99%; background-color: #111C20;
   opacity: 1;
   right: 0;
 }
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: #212121;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  font-size: 0.875rem;
+  display: block;
+  text-decoration: none;
+  padding: 6px 15px;
+}
+nav ul li a:hover {
+  color: #fff;
+}
+
+section {
+  height: 100%;
+  width: 100%;
+  display: table;
+  z-index: 0;
+  transition: transform 0.45s cubic-bezier(0, 0, 0.21, 1);
+}
+#one,#two,#three {height: 100%;}
+#one {
+  background: black;
+  color: white;
+}
+
+#two {
+  background: #00BCD4;
+}
+
+#three {
+  background: #673AB7;
+}
+
+a[id="one"]:target ~ #one {
+  transform: translate3d(0, 0, 0);
+}
+
+a[id="two"]:target ~ #two {
+  transform: translate3d(0, -100%, 0);
+}
+
+a[id="three"]:target ~ #three {
+  transform: translate3d(0, -200%, 0);
+}
+
 </style>
- <script>
-  window.console = window.console || function(t) {};
-</script>
 
-  
-  
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>
 </head>
+
 <body>
-<div class="bgimg">
-	<div class="container">
-	  <div class="row top">
-	    <div class="cell"><p id="comingsoon">COMING SOON...</p></div>
-	  </div>
-	  <div class="row middle">
-	    <div class="cell">
-	    	<script type="text/javascript">
-				var i = 0;
-				var txt = ''; //the typing text
-				var speed = 50;
 
-				function typeWriter() {
+<nav>
+</nav>
 
-				  //clear the html initially for a text
-				  if (i === 0)
-				    document.getElementById("button").innerHTML = '';
+<section id="one">
+    <div class="row middle">
+      <div class="cell">
+        <script type="text/javascript">
+        var i = 0;
+        var txt = ''; //the typing text
+        var speed = 50;
 
-				  if (i < txt.length) {
+        function typeWriter() {
 
-				    document.getElementById("button").innerHTML += txt.charAt(i);
-				    i++;
-				    setTimeout(typeWriter, speed);
-				  }
-				}
-				// function newColor() {
-				// 	document.getElementById("button").style.backgroundColor="yellow";
-				// }
-				a=1;
-				function newQuote() {
-				  //set the typing text
-				  if (a==1) {
-				  	txt = 'hei dude';
-				  	i=0;
-				  	typeWriter();
-				  	a++;
-				  } else
-				  if (a==2) {
-				  	txt = 'are you ready?';
-				  	i=0;
-				  	typeWriter();
-				  	a++;
-				  	$('.button').click( function(e) {
-					    e.preventDefault();
-					    $(this).removeClass('button-hover');
-					 });
-					document.getElementByClassName('button').disabled = true;
-				  } else
-				  if (a==3) {
-				  	txt = '';
-				  	i=0;
-				  	typeWriter();
-					var button = document.createElement("button");
-					button.innerHTML = "CLICK ME";
+          //clear the html initially for a text
+          if (i === 0)
+            document.getElementById("button").innerHTML = '';
 
-					// 2. Append somewhere
-					var span = document.getElementsByTagName("span")[0];
-					span.appendChild(button);
+          if (i < txt.length) {
 
-					// 3. Add event handler
-					button.addEventListener ("click", pika());
-				  	a=3;
-				  }
-				}
-		    </script>
-		    <button class="button button-hover" type=button onclick="newQuote()"><span id="button">Mulai</span></button>
-		    
-		    <hr class="border-grey" style="margin:auto;width:20%">
-		    <p class="large-center" color="white">
-				<script>
-					function doDate(){
-						var str = "";
-						var waktu = new Date();
-						var jam = waktu.getHours();
-						var menit = waktu.getMinutes();
-						var detik = waktu.getSeconds();
-						
-						if (jam <= 11){
-							var pesan = "Pagi";
-						}
-						else if (jam <=14){
-							var pesan = "Siang";
-						}
-						else if (jam <=17){
-							var pesan = "Sore";
-						}
-						else if (jam <=23){
-							var pesan = "Malam";
-						}
-						str += "Selamat "+pesan+", sekarang pukul "+jam+" : "+menit+" : "+detik;
-						document.getElementById("todaysDate").innerHTML = str;
-						
-					}
-					setInterval(doDate, 1000);
-				</script>
-				<div id="todaysDate" align="center" ></div>
-		    </p>
-	    </div>
-	  </div>
-	  <div class="row bottom">
-	    <div class="cell">
-	    	@edited Sources by <a href="https://github.com/fudhoil" target="_blank" class="dho">dho</a>
-	    </div>
-	  </div>
-	</div>
-</div>
-</body>
-</html>
+            document.getElementById("button").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+        // function newColor() {
+        //  document.getElementById("button").style.backgroundColor="yellow";
+        // }
+        a=1;
+        function newQuote() {
+          //set the typing text
+          if (a==1) {
+            txt = 'haii';
+            i=0;
+            typeWriter();
+            a++;
+          } else
+          if (a==2) {
+            txt = 'are you ready?';
+            i=0;
+            typeWriter();
+            a++;
+            $('.button').click( function(e) {
+              e.preventDefault();
+              $(this).removeClass('button-hover');
+           });
+          document.getElementByClassName('button').disabled = true;
+          } else
+          if (a==3) {
+            txt = 'CLICK ME';
+            i=0;
+            typeWriter();
+            a=4;
+          } else
+          if (a==4) {
+            txt = 'Are you sure this is me?';
+            i=0;
+            typeWriter();
+          // var button = document.createElement("button");
+          // button.innerHTML = "CLICK ME";
+          // button.style.border="none";
+          // 2. Append somewhere
+          // var span = document.getElementsByTagName("span")[0];
+          // span.appendChild(button);
+
+          // // 3. Add event handler
+          // button.addEventListener ("click", pika());
+            a=5;
+          } else
+          if (a==5) {
+            txt = 'HEI, I said.. ME';
+            i=0;
+            typeWriter();
+            a=6;
+          } else
+          if (a==6) {
+            txt = 'Look closer, you will find me';
+            i=0;
+            typeWriter();
+            a=7;
+          } else
+          if (a==7) {
+            txt = "Sometimes darkness doesn't mean empty";
+            i=0;
+            typeWriter();
+            a=8;
+          } else
+          if (a==8) {
+            txt = "Play around with your cursor";
+            i=0;
+            typeWriter();
+            a=8;
+          } 
+        }
+        </script>
+        <button class="button button-hover" type=button onclick="newQuote()"><span id="button">Mulai</span></button>
+        
+        <hr class="border-grey" style="margin:auto; width:20%">
+        <p class="large-center" color="white">
+        <script>
+          function doDate(){
+            var str = "";
+            var waktu = new Date();
+            var jam = waktu.getHours();
+            var menit = waktu.getMinutes();
+            var detik = waktu.getSeconds();
+            
+            if (jam <= 11){
+              var pesan = "Pagi";
+            }
+            else if (jam <=14){
+              var pesan = "Siang";
+            }
+            else if (jam <=17){
+              var pesan = "Sore";
+            }
+            else if (jam <=23){
+              var pesan = "Malam";
+            }
+            str += "Selamat "+pesan+", sekarang pukul "+jam+" : "+menit+" : "+detik;
+            document.getElementById("todaysDate").innerHTML = str;
+            
+          }
+          setInterval(doDate, 1000);
+        </script>
+        <div id="todaysDate" align="center" ></div>
+        </p>
+      </div>
+    </div>
+    <div class="row bottom">
+      <div class="cell">
+        triple clicked <a class="dho">........................................</a> <a href="#three" class="dho">dho</a>
+      </div>
+    </div>
+</section>
+  <a class="dho"></a>
+<section id="two">
+</section>
+<section id="three">
+  <a class="dho"></a>
+</section>
+</body></html>
