@@ -109,7 +109,7 @@ section {
   z-index: 0;
   transition: transform 0.45s cubic-bezier(0, 0, 0.21, 1);
 }
-#one,#two,#three {height: 100%;}
+#one,#three {height: 100%;}
 #one {
   background: black;
   color: white;
@@ -119,9 +119,6 @@ section {
   background: #00BCD4;
 }
 
-#three {
-  background: #673AB7;
-}
 
 a[id="one"]:target ~ #one {
   transform: translate3d(0, 0, 0);
@@ -129,10 +126,6 @@ a[id="one"]:target ~ #one {
 
 a[id="two"]:target ~ #two {
   transform: translate3d(0, -100%, 0);
-}
-
-a[id="three"]:target ~ #three {
-  transform: translate3d(0, -200%, 0);
 }
 
 </style>
@@ -277,8 +270,5 @@ a[id="three"]:target ~ #three {
 </section>
   <a class="dho"></a>
 <section id="two">
-</section>
-<section id="three">
-  <a class="dho"></a>
 </section>
 </body></html>
